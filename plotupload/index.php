@@ -2,7 +2,7 @@
 require "config/configuration.php";
 parse_str($_SERVER['QUERY_STRING'], $arr);
 if (isset($arr["key"])) {
-    $key = $arr["key"];
+    $key = htmlspecialchars($arr["key"]);
     if (strlen($key) == 36 || strlen($key) == 32) {
         header( "refresh:0;url=http://" . $_SERVER["SERVER_NAME"] . strtok($_SERVER["REQUEST_URI"],'?') . "download.php?" . $key) ;
     }
@@ -31,7 +31,7 @@ END NAVIGATION
 
 <?php
 if (isset($arr["key"])) {
-    echo "<a href='uploads/" . $arr["key"] . ".schematic'><h1>Click here if your download doesn't start automatically</h1></a>";
+    echo "<a href='uploads/" . htmlspecialchars($arr["key"]) . ".schematic'><h1>Click here if your download doesn't start automatically</h1></a>";
 }
 else {
     echo "<h1>PlotSquared plot downloading</h1>";
