@@ -5,14 +5,13 @@ if (count($ips) > 0 && !in_array($_SERVER['REMOTE_ADDR'], $ips)) {
     header('Location: http://13.13.13.13');
     exit();
 }
-
 if (strlen($_SERVER['QUERY_STRING']) != 36 && strlen($_SERVER['QUERY_STRING']) != 32) {
-    header('Location: http://13.13.13.13');
-    exit();
+  echo "Invalid request";
+  exit;
 }
 if (preg_match('/^\{?[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}\}?$/', $_SERVER['QUERY_STRING']) == 0) {
-    header('Location: http://13.13.13.13');
-    exit();
+    echo "Invalid request";
+    exit;
 }
 if (sizeof($_FILES) == 0) {
   echo "Sorry, only .schematic files are allowed.";
@@ -45,11 +44,7 @@ if ($_FILES["schematicFile"]["size"] > 500000) {
 }
 // Allow certain file formats
 if($schematicFileType != "schematic") {
-    echo basename( $_FILES["schematicFile"]["name"]);
-    echo " --- ";
-    echo $schematicFileType;
-    echo " --- ";
-    echo "Sorry, only .schematic files are allowed.";
+    echo " Sorry, only .schematic files are allowed.";
     $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
@@ -58,7 +53,8 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["schematicFile"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["schematicFile"]["name"]). " has been uploaded.";
+        echo "Success";
+        header('Location: index.php?upload=' . $_SERVER['QUERY_STRING']);
     } else {
         var_dump($_FILES);
         echo $_FILES['schematicFile']['error'];

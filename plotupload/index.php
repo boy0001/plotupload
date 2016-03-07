@@ -28,7 +28,6 @@ EDITABLE: Navigation
 <!--
 END NAVIGATION
 -->
-
 <?php
 if (isset($arr["key"])) {
     echo "<a href='uploads/" . htmlspecialchars($arr["key"]) . ".schematic'><h1>Click here if your download doesn't start automatically</h1></a>";
@@ -38,8 +37,8 @@ else {
 }
 ?>
 <div id="main">
-<h2>How to download your plot</h2>
 <div id=box>
+<h2>How to download your plot</h2>
 <table>
     <tr>
       <td><b>Login to your favorite creative server</b></td>
@@ -55,8 +54,17 @@ else {
     </tr>
 </table>
 </div>
-</div>
+<?php
+if (count(Config::get('ups')) == 0) {
+    echo "<h2>Upload:</h2><form id='myform' action='upload.php' method='post' enctype='multipart/form-data'><input type='file' name='schematicFile' onchange='upload()'></form></div>";
+}
+?>
 <script>
+function upload() {
+    var form = document.getElementById("myform");
+    form.action = "upload.php?" + 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {var r = Math.random()*16|0,v=c=='x'?r:r&0x3|0x8;return v.toString(16);});
+    form.submit();
+}
 search = window.location.search.substring(1);
 if (search.length > 0) {
     split = search.split("&");
@@ -70,6 +78,10 @@ if (search.length > 0) {
                 break;
             case "ip":
                 document.getElementById("ip").innerHTML = split2[1];
+                break;
+            case "upload":
+                window.prompt("To paste your schematic use ", "/plot schematic paste url:" + split2[1]);
+                window.location = window.location.href.split("?")[0];
                 break;
         }
     }
