@@ -32,7 +32,7 @@ $config['serverip'] = 'your.ip.here'									  ;	# The server IP to display on t
                                                                                                                        #
 $config['home']  = 'https://www.spigotmc.org/resources/plotsquared.1177/' ; # The website for the home link            #
                                                                                                                        #
-$config['ups']   = array('127.0.0.1')                                     ; # To authorize all servers use array()     #
+$config['ups']   = array()                               ; # To authorize a specific server use array('your.server.ip')#
 ########################################################################################################################
 
 // DO NOT EDIT BELOW THIS
