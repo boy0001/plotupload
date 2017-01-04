@@ -16,6 +16,8 @@
 			<link rel="stylesheet" href="/styles/themes/Yeti/css/font-awesome.min.css?version=2" title="Yeti">
 	<!-- END Custom Themes -->
 	<link rel='stylesheet' type='text/css' href="style/custom.css">
+	<script type="text/javascript" src="res/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="res/js/bootstrap-filestyle.min.js"></script>
 
 	<!-- Input navbar for all pages below -->
 	

@@ -35,7 +35,7 @@ END NAVIGATION
 
 <div id="main">
 	<div id="box">
-		<h2>How to download your plot</h2>
+		<h2 class="h2-custom">How to download your plot</h2>
 		<table>
 			<tr>
 				<td><b>Login to your favorite creative server</b></td>
@@ -51,10 +51,14 @@ END NAVIGATION
 			</tr>
 		</table>
 	</div>
+	
+	<script>
+		$(":file").filestyle({buttonName: "btn-primary"});
+	</script>
 
 <?php
 if (count(Config::get('ups')) == 0) {
-    echo "<h2>Upload:</h2><form id='myform' action='upload.php' method='post' enctype='multipart/form-data'><input type='file' name='schematicFile' onchange='upload()'></form></div>";
+    echo "<h2 class='h2-custom'>Upload:</h2><form id='myform' action='upload.php' method='post' enctype='multipart/form-data'><input type='file' class='filestyle' data-buttonName='btn-primary' name='schematicFile' onchange='upload()'></form></div>";
 }
 ?>
 
