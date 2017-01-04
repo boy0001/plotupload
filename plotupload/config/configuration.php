@@ -24,6 +24,9 @@ $config = array();                                                              
 $config['title'] = 'PlotSquared plot download'                            ; # Title of the web page                    #
 //For A Specific Style:																								   #
 $config['style'] = 'default'											  ; # The style to use (see styles folder)	   #
+$config['navtitle'] = 'Plot Upload Interface'							  ; # The text in the navbar				   #
+$config['header1'] = 'PlotSquared Plot Downloading'						  ; # The big text on the web page			   #
+$config['serverip'] = 'your.ip.here'									  ;	# The server IP to display on the web page #
 //For Random Styles: $config['style'] = $styles[array_rand($styles, 1)]   										       #
 //If you like a specific style: $config['style'] = 'default'                                                           #
                                                                                                                        #

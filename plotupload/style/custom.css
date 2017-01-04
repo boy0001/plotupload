@@ -1,3 +1,7 @@
-.h1 {
+.h1-custom {
   color: #fff;
+}
+.margin-fix {
+margin-left: 12rem;
+margin-right: 12rem;
 }

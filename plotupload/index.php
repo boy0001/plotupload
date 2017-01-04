@@ -21,25 +21,16 @@ EDITABLE: Navigation
 <!--
 END NAVIGATION
 -->
-<?php
-if (isset($arr["key"])) {
-    echo "<a href='uploads/" . htmlspecialchars($arr["key"]) . ".schematic'><h1>Click here if your download doesn't start automatically</h1></a>";
-}
-else {
-    echo "<h1>PlotSquared plot downloading</h1>";
-}
-?>
 
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title">Consoles</h3>
-	</div>
-	<div class="panel-body">
-		<ul>
-			<li><a href="#">Hub</a></li>
-			<li><a href="#">Creative</a></li>
-		</ul>
-	</div>
+<div class="container">
+	<?php
+	if (isset($arr["key"])) {
+		echo "<a href='uploads/" . htmlspecialchars($arr["key"]) . ".schematic'><h1>Click here if your download doesn't start automatically</h1></a>";
+	}
+	else {
+		echo "<h1 class='h1-custom'>" . Config::get('header1') . "</h1>";
+	}
+	?>
 </div>
 
 <div id="main">
@@ -47,24 +38,27 @@ else {
 		<h2>How to download your plot</h2>
 		<table>
 			<tr>
-			<td><b>Login to your favorite creative server</b></td>
-			<td id="ip">your.ip.here</td>
+				<td><b>Login to your favorite creative server</b></td>
+				<td id="ip"><?php echo Config::get('serverip'); ?></td>
 			</tr>
 			<tr>
-			<td><b>Go to your plot</b></td>
-			<td>/plot home</td>
+				<td><b>Go to your plot</b></td>
+				<td>/plot home</td>
 			</tr>
 			<tr>
-			<td><b>Download your plot</b></td>
-			<td>/plot download</td>
+				<td><b>Download your plot</b></td>
+				<td>/plot download</td>
 			</tr>
 		</table>
 	</div>
+</div>
+
 <?php
 if (count(Config::get('ups')) == 0) {
     echo "<h2>Upload:</h2><form id='myform' action='upload.php' method='post' enctype='multipart/form-data'><input type='file' name='schematicFile' onchange='upload()'></form></div>";
 }
 ?>
+
 <script>
 	function upload() {
 		var form = document.getElementById("myform");

@@ -29,7 +29,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="./">CP2 Interface</a>
+				<a class="navbar-brand" href="./"><?php echo Config::get('navtitle');?></a>
 			</div>
 			
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -38,41 +38,6 @@
 					<li><a href="<?php echo Config::get('home');?>">Home</a></li>
 					<li><a href="https://github.com/IntellectualCrafters/PlotSquared/wiki">Wiki</a></li>
 					<li><a href="https://github.com/IntellectualCrafters/PlotSquared/issues">Issues</a><li>
-				</ul>
-				<!-- User control (right side of navbar) -->
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown alert-dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span style="margin: -10px 0px; font-size: 16px;"><i class="fa fa-envelope"></i> <div style="display: inline;" id="pms"></div></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Click View Messages</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="../user/messaging">View Messages</a></li>
-						</ul>
-					</li>	
-					
-					<li class="dropdown alert-dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span style="margin: -10px 0px; font-size: 16px;"><i class="fa fa-flag"></i> <div style="display: inline;" id="alerts"></div></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Click View Alerts</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="../user/alerts">View Alerts</a></li>
-						</ul>
-					</li>
-					
-					<li class="dropdown">
-						<a href="#" data-toggle="dropdown" role="button" aria-expanded="false">&nbsp;&nbsp;MuhsinunCool <span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="../profile/">Profile</a></li>
-							<li class="divider"></li>
-							<li><a href="../user">UserCP</a></li>
-							<li><a href="../mod">ModCP</a></li>
-							<li><a href="../admin">AdminCP</a></li>
-							<li class="divider"></li>
-							<li><a href="../infractions">Infractions</a></li>
-							<li class="divider"></li>
-							<li><a href="./login.php"></a></li>
-						</ul>
-					</li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container -->
