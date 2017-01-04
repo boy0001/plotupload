@@ -58,7 +58,7 @@ END NAVIGATION
 
 <?php
 if (count(Config::get('ups')) == 0) {
-    echo "<h2 class='h2-custom'>Upload:</h2><form id='myform' action='upload.php' method='post' enctype='multipart/form-data'><input type='file' class='filestyle' data-buttonName='btn-primary' name='schematicFile' onchange='upload()'></form></div>";
+    echo "<h2 class='h2-custom'>Upload:</h2><form id='myform' action='upload.php' method='post' enctype='multipart/form-data'><div class='form-group'><div class='row'><div class='col-md-12'><input type='file' class='container filestyle' data-buttonName='btn-primary' name='schematicFile' onchange='upload()'></div></div></div></form></div>";
 }
 ?>
 
