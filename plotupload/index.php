@@ -51,7 +51,6 @@ END NAVIGATION
 			</tr>
 		</table>
 	</div>
-</div>
 
 <?php
 if (count(Config::get('ups')) == 0) {
