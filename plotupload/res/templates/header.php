@@ -18,6 +18,14 @@
 	<link rel='stylesheet' type='text/css' href="style/custom.css">
 	<script type="text/javascript" src="res/js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="res/js/bootstrap-filestyle.min.js"></script>
+	
+	<!-- Add jquery flicker fixing class -->
+	<script>
+		document.write('<style type="text/css">.fix-jquery-flicker{display:none}</style>');
+		jQuery(function($) {
+		$('.fix-jquery-flicker').css('display','block');
+		});
+	</script>
 
 	<!-- Input navbar for all pages below -->
 	
