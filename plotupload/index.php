@@ -6,6 +6,8 @@ parse_str($_SERVER['QUERY_STRING'], $arr);
 <HEAD>
 <TITLE><?php echo Config::get('title');?></TITLE>
 <link rel='stylesheet' type='text/css' href='style/style_<?php echo Config::get('style');?>.css'>
+<link rel='stylesheet' type='text/css' href='style/font.css' media="none" onload="if(media!='all')media='all'">
+<noscript><link rel="stylesheet" 'style/font.css'></noscript>
 </HEAD>
 <BODY>
 
@@ -93,7 +95,7 @@ if (search.length > 0) {
                 document.getElementById("ip").innerHTML = split2[1];
                 break;
             case "upload":
-                window.prompt("To load your schematic use ", "//schematic load url:" + split2[1]);
+                window.prompt("To paste your schematic use ", "/plot schematic paste url:" + split2[1]);
                 window.location = window.location.href.split("?")[0];
                 break;
         }
