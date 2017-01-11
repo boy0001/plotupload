@@ -16,7 +16,8 @@ EDITABLE: Navigation
 <a class="navbar-brand"><?php echo Config::get('navtitle');?></a>
 <div id=button><a class=navlink href="<?php echo Config::get('home');?>">Home</a></div>
 <div id=button><a class=navlink href="https://github.com/IntellectualCrafters/PlotSquared/wiki">Wiki</a></div>
-<div id=button><a class=navlink href="https://github.com/IntellectualCrafters/PlotSquared/issues">Issues</a></div>
+<div id=button><a class=navlink href="https://github.com/IntellectualCrafters/PlotSquared/issues">Report Issue</a></div>
+<div id=button><a class=navlink href="https://discord.gg/ngZCzbU">Support/Chat</a></div>
 </div>
 <div id=banner>
 </div>
@@ -69,7 +70,7 @@ if (count(Config::get('ups')) == 0) {
     echo "<h2>Upload:</h2><form id='myform' action='upload.php' method='post' enctype='multipart/form-data'><input type='file' name='schematicFile' onchange='upload()'></form>";
 }
 ?>
-<h2>See also: <div id=button><a class=navlink href="https://github.com/IntellectualCrafters/PlotSquared/wiki">WorldEdit Schematic Downloading/Uploading</a></div></h2>
+<h2>See also: <div id=button><a class=navlink href="https://www.spigotmc.org/resources/13932/">WorldEdit Schematic Downloading/Uploading with FAWE</a></div></h2>
 </div>
 <script>
 function upload() {
