@@ -6,13 +6,17 @@ To install:
  - Change the url in PlotSquared settings.yml
  - Test out /plot download
 
-Benefits:
+Benefits over the old interface:
  - This can run on a different machine to your server
  - You can connect multiple servers to the same web interface
+ - Downloads/Uploads are entirely unlisted/anonymous
+ - You can upload files from your computer
+ - Supports multiple formats (MCA/Schematic)
+ - You can delete a file after you download it
  
-What this does not currently support:
- - Plot uploading (request this feature if desired)
- - Plot searching (request this feature if desired)
+What functionality is no longer present:
+ - Plot/User Search (sacrificed for multi-server support)
+ - REST-API
  
 Notes:
  - If you are going to monetize this (e.g. for donators) please consider the amount of effort that has gone into PlotSquared; currently we get very little in terms of contributions. 
