@@ -76,12 +76,14 @@ body
 	text-decoration:none;
 	height:50px;
 	padding:20px;
-	color:#fff
+	color: inherit;
+	
 }
 
 .navlink:hover
 {
-	background:#222
+	background:#222;
+	color:#fff;
 }
 
 .navlink:active
@@ -90,7 +92,8 @@ body
 	padding-left:15px;
 	border-right:5px solid #111;
 	padding-right:15px;
-	border-radius:100px
+	border-radius:100px;
+	color:#fff;
 }
 
 #main

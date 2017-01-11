@@ -79,16 +79,18 @@ body
 	text-decoration:none;
 	height:50px;
 	padding:20px;
-	color:#fff
+	color:inherit
 }
 
 .navlink:hover
 {
+	color: #fff;
 	background:#222
 }
 
 .navlink:active
 {
+	color: #fff;
 	background:#111
 }
 

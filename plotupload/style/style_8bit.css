@@ -37,7 +37,7 @@
 	color:#000
 }
 a:link {
-    color: #000;
+    color: inherit;
 }
 #download:hover, #dlbutton:hover
 {
@@ -94,7 +94,7 @@ body
 	height:50px;
 	padding:20px;
     font-size: 150%;
-    color:#000;
+    color:inherit;
 }
 
 .navlink:hover

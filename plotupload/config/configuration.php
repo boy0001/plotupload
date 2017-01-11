@@ -13,8 +13,6 @@ class Config {
     }
 }
 
-$styles = array("8bit", "clean", "default", "frame", "gray", "green", "orange", "phanaticd", "shadow");
-
 ########################################################################################################################
 $config = array();                                                                                                     #
                                                                                                                        #
@@ -22,12 +20,18 @@ $config = array();                                                              
                                                                                                                        #
 # Edit below this ######################################################################################################
 $config['title'] = 'PlotSquared plot download'                            ; # Title of the web page                    #
-$config['style'] = $styles[array_rand($styles, 1)]                        ; # The style to use (see styles folder)     #
+# ============== # Styles: 8bit, dark, default, shadow, phanaticd, orange, green, clean, grey, frame. # ============== #
+$config['style'] = "dark"                                                 ; # The style to use (see styles folder)     #
 //If you like a specific style: $config['style'] = 'default'                                                           #
                                                                                                                        #
-$config['home']  = 'https://www.spigotmc.org/resources/plotsquared.1177/' ; # The website for the home link            #
+$config['home']  = 'https://www.spigotmc.org/resources/1177/' ;             # The website for the home link            #
                                                                                                                        #
-$config['ups']   = array('127.0.0.1')                                     ; # To authorize all servers use array()     #
+# e.g. array('192.168.1.10')                                                                                           #
+$config['ups']   = array()                                                ; # To authorize all servers use array()     #
+                                                                                                                       #
+$config['size']  = 15000000                                               ; # Max file size                            #
+                                                                                                                       #
+$config['allow-delete']  = true                                           ; # Allow file deletion requests             #
 ########################################################################################################################
 
 // DO NOT EDIT BELOW THIS

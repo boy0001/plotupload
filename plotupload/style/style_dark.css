@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:100");
+#nav
+{
+	
+	background:#666;
+	color:#CCC;
+	height:50px;
+	font-size:18px;
+	padding-left:10%;
+	position:relative;
+	overflow:hidden;
+    border-bottom: 4px solid #444;
+    box-shadow: 0 0 1px #333;
+	background:#666;
+
+	box-shadow: 0 0 16px #181818;
+}
+
+#item
+{
+	display:inline-block;
+	padding:20px;
+	background:#CCC;
+	margin:20px;
+}
+
+#download
+{
+	display:inline-block;
+	padding:20px;
+	background:#6C6;
+	margin:20px;
+}
+
+#dlbutton
+{
+	text-decoration:none;
+	height:50px;
+	padding:20px;
+	color:#EEE;
+}
+
+#download:hover
+{
+	background:#393
+}
+
+#download:active
+{
+	background:#363
+}
+
+#banner
+{
+	height:150px;
+    background-image: url('logo.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center 58px; 
+}
+b {
+	font-weight:normal;
+}
+body
+{
+	color: #CCC;
+	background:#222;
+    background: -webkit-linear-gradient(#202020, #242424); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#202020, #242424); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#202020, #242424); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#202020, #242424); /* Standard syntax */
+	font-family: 'Exo', sans-serif;
+	font-size:13px;
+	margin:0;
+	padding:0;
+	top:0;
+	left:0;
+	background-image: url('bg222.png');
+}
+
+#button
+{
+	line-height:50px;
+	margin-left:5px;
+	display:inline-block
+}
+
+.navlink
+{
+	text-decoration:none;
+	height:50px;
+	padding:20px;
+	color:#CCC;
+	border: 4px solid #666;
+	-webkit-transition: border 1s, background 1s; /* Safari */
+    transition: border 1s, background 1s;
+}
+
+.navlink:hover
+{
+	background: #444;
+	border: 4px solid #444;
+	-webkit-transition: border 1s, background 1s; /* Safari */
+    transition: border 1s, background 1s;
+}
+
+.navlink:active
+{
+	border: 4px solid orange;
+	background: #222;
+	-webkit-transition: border 1s, background 1s; /* Safari */
+    transition: border 1s, background 1s;
+}
+
+#main
+{
+	box-shadow: 0 0 16px #181818;
+	padding:10px 20px;
+	margin:15px 10% 15px 10%;
+    background: -webkit-linear-gradient(#606060, #646464); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#606060, #646464); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#606060, #646464); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#606060, #646464); /* Standard syntax */
+	border-top: 4px solid #444;
+	border-bottom: 4px solid #888;
+	border-radius: 6px;
+}
+h1
+{
+	box-shadow: 0 0 16px #181818;
+	border-top: 4px solid #444;
+	border-bottom: 4px solid #888;
+    padding:10px;
+	margin:-45px 10% 0px 10%;
+	color:#EEE;
+	text-align:center;
+	background: #626262;
+    background: -webkit-linear-gradient(#606060, #646464); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#606060, #646464); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#606060, #646464); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#606060, #646464); /* Standard syntax */
+	border-radius: 6px;
+	font-size: 30px;
+}
+h2 {
+	font-weight:normal;
+	padding: 5px;
+	margin: 0 0 10px 0;
+	border-left: 4px solid #444;
+}
+
+table
+{
+	border-top: 4px solid #444;
+	border-bottom: 4px solid #888;
+    background: -webkit-linear-gradient(#303030, #343434); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#303030, #343434); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#303030, #343434); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#303030, #343434); /* Standard syntax */
+	table-layout:auto;
+	width:100%;
+	border-collapse:collapse
+}
+
+td
+{
+	text-align:left;
+	padding:5px
+}
+
+#box
+{
+	margin-bottom:20px;
+}
+
+input[type=text]:focus
+{
+	outline:0 none transparent
+}
+
+input[type=text]
+{
+    border-bottom: 1px solid #666;
+    font-family: 'Exo', sans-serif;
+    background-color:#444;
+	border:none;
+	font-size:150%;
+	width:100%;
+	cursor:pointer
+}
+
+input[type=submit]:focus
+{
+	outline:0 none transparent
+}
+
+input[type=submit]
+{
+    font-family: 'Exo', sans-serif;
+    border: 1px solid #666;
+    box-shadow: 0 0 1px #FF0000;
+	color:#EEE;
+	font-size:150%;
+	background:#444;
+	width:100%;
+	cursor:pointer;
+}
+
+input[type=submit]:hover
+{
+	background-color:#33CC33
+}
+
+input[type=submit]:active
+{
+	background-color:#339933;
+}
+
+input[type=file]:focus {
+    outline:0px none transparent;
+}
+input[type=file] {
+    font-family: 'Exo', sans-serif;
+    border-top: 4px solid #444;
+	border-bottom: 4px solid #888;
+	border-radius: 5px;
+    font-size:150%;
+    width:100%;
+    cursor:pointer;
+	background: #555;
+	-webkit-transition: background 1s; /* Safari */
+    transition: background 1s;
+}
+input[type=file]:hover {
+    background-color:#666;
+	-webkit-transition: background 1s; /* Safari */
+    transition: background 1s;
+}
+input[type=file]:active {
+    background-color:#666;
+	-webkit-transition: background 1s; /* Safari */
+    transition: background 1s;
+}

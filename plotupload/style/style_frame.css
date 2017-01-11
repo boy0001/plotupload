@@ -67,7 +67,7 @@ body
 {
 	text-decoration:none;
 	padding-left:20px;
-	color:#fff
+	color:inherit;
 }
 
 .navlink:hover

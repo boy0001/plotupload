@@ -1,12 +1,6 @@
 <?php
 require "config/configuration.php";
 parse_str($_SERVER['QUERY_STRING'], $arr);
-if (isset($arr["key"])) {
-    $key = htmlspecialchars($arr["key"]);
-    if (strlen($key) == 36 || strlen($key) == 32) {
-        header( "refresh:0;url=http://" . $_SERVER["SERVER_NAME"] . strtok($_SERVER["REQUEST_URI"],'?') . "download.php?" . $key) ;
-    }
-}
 ?>
 <HTML>
 <HEAD>
@@ -30,7 +24,22 @@ END NAVIGATION
 -->
 <?php
 if (isset($arr["key"])) {
-    echo "<a href='uploads/" . htmlspecialchars($arr["key"]) . ".schematic'><h1>Click here if your download doesn't start automatically</h1></a>";
+    $uuid = htmlspecialchars($arr["key"]);
+    if ((strlen($uuid) == 36 || strlen($uuid) == 32) && preg_match('/^\{?[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}\}?$/', $uuid) != 0) {
+        $target_dir = "uploads/";
+        $target_file = $target_dir . basename($uuid) . ".schematic";
+        if (file_exists($target_file)) {
+            echo "<a href='uploads/" . $uuid . ".schematic'><h1>Click here if your download doesn't start automatically</h1></a>";
+            if (Config::get('allow-delete')) {
+                echo "<br><br><br><a href='delete.php?" . $uuid . "'><h1>Click here to permanently delete the file</h1></a>";
+            }
+            header( "refresh:0;url=http://" . $_SERVER["SERVER_NAME"] . strtok($_SERVER["REQUEST_URI"],'?') . "download.php?" . $uuid) ;
+        } else {
+            echo "<h1>File deleted!</h1>";
+        }
+    } else {
+        echo "<h1>Invalid Key!</h1>";
+    }
 }
 else {
     echo "<h1>PlotSquared plot downloading</h1>";
@@ -56,9 +65,11 @@ else {
 </div>
 <?php
 if (count(Config::get('ups')) == 0) {
-    echo "<h2>Upload:</h2><form id='myform' action='upload.php' method='post' enctype='multipart/form-data'><input type='file' name='schematicFile' onchange='upload()'></form></div>";
+    echo "<h2>Upload:</h2><form id='myform' action='upload.php' method='post' enctype='multipart/form-data'><input type='file' name='schematicFile' onchange='upload()'></form>";
 }
 ?>
+<h2>See also: <div id=button><a class=navlink href="https://github.com/IntellectualCrafters/PlotSquared/wiki">WorldEdit Schematic Downloading/Uploading</a></div></h2>
+</div>
 <script>
 function upload() {
     var form = document.getElementById("myform");
@@ -80,7 +91,7 @@ if (search.length > 0) {
                 document.getElementById("ip").innerHTML = split2[1];
                 break;
             case "upload":
-                window.prompt("To paste your schematic use ", "/plot schematic paste url:" + split2[1]);
+                window.prompt("To load your schematic use ", "//schematic load url:" + split2[1]);
                 window.location = window.location.href.split("?")[0];
                 break;
         }

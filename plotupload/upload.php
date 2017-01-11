@@ -14,7 +14,7 @@ if (preg_match('/^\{?[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12
     exit;
 }
 if (sizeof($_FILES) == 0) {
-  echo "Sorry, only .schematic files are allowed.";
+  echo "Sorry, only .schematic files are allowed. ";
   exit;
 }
 $target_dir = "uploads/";
@@ -38,13 +38,13 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["schematicFile"]["size"] > 500000) {
+if ($_FILES["schematicFile"]["size"] > Config::get('size')) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
 // Allow certain file formats
 if($schematicFileType != "schematic") {
-    echo " Sorry, only .schematic files are allowed.";
+    echo " Sorry, only .schematic files are allowed. " . $schematicFileType . "<";
     $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
@@ -58,6 +58,7 @@ if ($uploadOk == 0) {
     } else {
         var_dump($_FILES);
         echo $_FILES['schematicFile']['error'];
+        echo $target_file;
         echo "<br>";
         echo "FAILURE";
     }

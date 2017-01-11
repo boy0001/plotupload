@@ -58,13 +58,15 @@ body {
     text-decoration: none;
     height: 50px;
     padding: 20px;
-    color: white;
+    color: inherit;
 }
 .navlink:hover {
     background: #339933;
+	color: white;
 }
 .navlink:active {
     background: #336633;
+	color: white;
 }
 #main {
     padding: 0 20px 0 20px;
