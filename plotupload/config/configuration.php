@@ -24,6 +24,9 @@ $config['title'] = 'PlotSquared plot download'                            ; # Ti
 $config['style'] = "dark"                                                 ; # The style to use (see styles folder)     #
 //If you like a specific style: $config['style'] = 'default'                                                           #
                                                                                                                        #
+$config['navtitle'] = 'Plot Upload Interface:'							  ; # The text in the navbar				   #
+$config['header1'] = 'PlotSquared Plot Downloading'						  ; # The big text on the web page			   #
+$config['serverip'] = 'your.ip.here'									  ;	# The server IP to display on the web page #
 $config['home']  = 'https://www.spigotmc.org/resources/1177/' ;             # The website for the home link            #
                                                                                                                        #
 # e.g. array('192.168.1.10')                                                                                           #

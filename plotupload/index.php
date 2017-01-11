@@ -13,6 +13,7 @@ parse_str($_SERVER['QUERY_STRING'], $arr);
 EDITABLE: Navigation
 -->
 <div id=nav>
+<a class="navbar-brand"><?php echo Config::get('navtitle');?></a>
 <div id=button><a class=navlink href="<?php echo Config::get('home');?>">Home</a></div>
 <div id=button><a class=navlink href="https://github.com/IntellectualCrafters/PlotSquared/wiki">Wiki</a></div>
 <div id=button><a class=navlink href="https://github.com/IntellectualCrafters/PlotSquared/issues">Issues</a></div>
@@ -42,7 +43,7 @@ if (isset($arr["key"])) {
     }
 }
 else {
-    echo "<h1>PlotSquared plot downloading</h1>";
+    echo "<h1 class='h1-custom'>" . Config::get('header1') . "</h1>";
 }
 ?>
 <div id="main">
@@ -51,7 +52,7 @@ else {
 <table>
     <tr>
       <td><b>Login to your favorite creative server</b></td>
-      <td id=ip>your.ip.here</td>
+      <td id="ip"><?php echo Config::get('serverip'); ?></td>
     </tr>
     <tr>
       <td><b>Go to your plot</b></td>
