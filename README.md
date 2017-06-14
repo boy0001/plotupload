@@ -1,6 +1,7 @@
 To install:
  - Make sure you have a web server with PHP installed
- - Move the plotupload files to your web directory
+ - Move the plotupload or faweupload files to your web directory (PlotSquared or FastAsyncWorldEdit)
+    Note: Either will work for both plugins, there's just a different style and text
  - (If you get errors, make sure PHP isn't horribly outdated)
  - Configure the style and any other settings in plotupload/config/configuration.php
  - Change the url in PlotSquared settings.yml

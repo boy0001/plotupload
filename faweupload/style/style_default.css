@@ -1,0 +1,237 @@
+@import url("http://fonts.googleapis.com/css?family=Exo:400,700");
+#nav
+{
+    background: rgba(20,20,20,0.5);
+	color:#fff;
+	height:50px;
+	font-weight:700;
+	font-size:13px;
+	padding-left:10%;
+	position:relative;
+	overflow:hidden;
+    box-shadow: 0 0 2px #000;
+}
+
+#item
+{
+	display:inline-block;
+	padding:20px;
+	background:#CCC;
+	border:1px solid #999;
+	margin:20px
+}
+
+#download
+{
+	display:inline-block;
+	padding:20px;
+	background:#6C6;
+	border:1px solid #393;
+	margin:20px
+}
+
+#dlbutton
+{
+	text-decoration:none;
+	height:50px;
+	padding:20px;
+	font-weight:700;
+	color:#fff
+}
+
+#download:hover
+{
+	background:#393
+}
+
+#download:active
+{
+	background:#363
+}
+
+#banner::before {
+    white-space:pre;
+    content: "FAWE\A";
+    font-size: 500%;
+	color:#993333;
+	text-shadow:
+    -1px -1px 1px #441111,
+    -1px 1px 1px #441111,
+    -1px 0 1px #441111,
+    1px -1px 1px #441111,
+    1px 1px 1px #441111,
+    1px 0 1px #441111,
+    0 -1px 1px #441111,
+    0 1px 1px #441111;
+}
+
+#banner::after {
+    content: "(By Empire92)";
+	color:#777;
+	text-shadow:
+    -1px -1px 0 #444,
+    -1px 1px 0 #444,
+    -1px 0 0 #444,
+    1px -1px 0 #444,
+    1px 1px 0 #444,
+    1px 0 0 #444,
+    0 -1px 0 #444,
+    0 1px 0 #444;
+}
+
+#banner
+{
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+	height:190px;
+}
+
+body
+{
+    font-family: 'Exo', sans-serif;
+	background-image: url('bg222.png');
+    background-color: #333;
+	margin:0;
+	padding:0;
+	top:0;
+	left:0
+}
+
+#button
+{
+	line-height:50px;
+	margin-left:5px;
+	display:inline-block
+}
+
+.navlink
+{
+	text-decoration:none;
+	height:50px;
+	padding:20px;
+	color:#fff
+}
+
+.navlink:hover
+{
+	background: rgba(20,20,20,0.3);
+}
+
+.navlink:active
+{
+	background:#111
+}
+
+#main
+{
+	padding:10px 20px;
+	margin:15px 10%;
+	background:#FFF;
+    box-shadow: 0 0 2px #333;
+    border-radius: 5px;
+}
+
+h1
+{
+    border-radius: 5px;
+    box-shadow: 0 0 2px #111;
+    padding:10px;
+	margin:-45px 10% 0px 10%;
+    font-size: 100%;
+	color:#fff;
+	text-align:center;
+	background: rgba(20,20,20,0.5);
+}
+
+table
+{
+	table-layout:auto;
+	width:100%;
+	border-collapse:collapse
+}
+
+td
+{
+	border-bottom:1px solid #CCC;
+	text-align:left;
+	padding:5px
+}
+
+#box
+{
+	background:#EEE;
+	padding:20px;
+	border:1px dashed #DDD;
+	margin-bottom:20px;
+	font-weight:700;
+    border-radius: 5px;
+}
+
+input[type=text]:focus
+{
+	outline:0 none transparent
+}
+
+input[type=text]
+{
+    font-family: 'Exo', sans-serif;
+	border:1px solid #CCC;
+    border-radius: 5px;
+	font-size:150%;
+	width:100%;
+	cursor:pointer
+}
+
+input[type=text]:hover
+{
+	background-color:#EEE
+}
+
+input[type=submit]:focus
+{
+	outline:0 none transparent
+}
+
+input[type=submit]
+{
+    font-family: 'Exo', sans-serif;
+    border-radius: 5px;
+	border: none;
+	color:#fff;
+	margin-top:25px;
+	font-size:150%;
+	background:#666;
+	width:100%;
+	cursor:pointer
+}
+
+input[type=submit]:hover
+{
+	background-color:#999
+}
+
+input[type=submit]:active
+{
+	background-color:#333;
+}
+
+input[type=file]:focus {
+    outline:0px none transparent;
+}
+input[type=file] {
+    font-family: 'Exo', sans-serif;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    margin-top: 25px;
+    font-size:150%;
+    width:100%;
+    cursor:pointer;
+}
+input[type=file]:hover {
+    background-color:#EEE;
+}
+input[type=file]:active {
+    background-color:#CCC;
+}
