@@ -30,7 +30,7 @@ $config['serverip'] = 'your.ip.here'									  ;	# The server IP to display on t
 $config['home']  = 'https://www.spigotmc.org/resources/1177/' ;             # The website for the home link            #
                                                                                                                        #
 # e.g. array('192.168.1.10')                                                                                           #
-$config['ups']   = array()                                                ; # To authorize all servers use array()     #
+$config['required_ips']   = array()                                       ; # To authorize all servers use array()     #
                                                                                                                        #
 $config['size']  = 15000000                                               ; # Max file size                            #
                                                                                                                        #

@@ -29,11 +29,12 @@ END NAVIGATION
 <?php
 if (isset($arr["key"])) {
     $uuid = htmlspecialchars($arr["key"]);
+    $type = isset($arr["type"]) ? $arr["type"] : "schematic";
     if ((strlen($uuid) == 36 || strlen($uuid) == 32) && preg_match('/^\{?[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}\}?$/', $uuid) != 0) {
         $target_dir = "uploads/";
-        $target_file = $target_dir . basename($uuid) . ".schematic";
+        $target_file = $target_dir . basename($uuid) . "." . $type;
         if (file_exists($target_file)) {
-            echo "<a href='uploads/" . $uuid . ".schematic'><h1>Click here if your download doesn't start automatically</h1></a>";
+            echo "<a href='uploads/" . $uuid . "." . $type . "'><h1>Click here if your download doesn't start automatically</h1></a>";
             if (Config::get('allow-delete')) {
                 echo "<br><br><br><a href='delete.php?" . $uuid . "'><h1>Click here to permanently delete the file</h1></a>";
             }
@@ -68,7 +69,7 @@ else {
 </table>
 </div>
 <?php
-if (count(Config::get('ups')) == 0) {
+if (count(Config::get('required_ips')) == 0) {
     echo "<h2>Upload:</h2><form id='myform' action='upload.php' method='post' enctype='multipart/form-data'><input type='file' name='schematicFile' onchange='upload()'></form>";
 }
 ?>
