@@ -1,3 +1,5 @@
+For FastAsyncWordlEdid (FAWE) use fawe upload
+
 To install:
  - Make sure you have a web server with PHP installed
  - Move the plotupload or faweupload files to your web directory (PlotSquared or FastAsyncWorldEdit)
@@ -6,6 +8,12 @@ To install:
  - Configure the style and any other settings in plotupload/config/configuration.php
  - Change the url in PlotSquared settings.yml
  - Test out /plot download
+ 
+ Installing on a Dedicated Server or VPS:
+ - Make sure you have web server (apache2 recommended) and the latest php installed
+ - Put the files into the following directory /var/www/html
+ - To allow users to upload to the server allow the file to write chmod -R 0777 /var/www/html
+ - Then follow the above steps to allow all other functionality.
 
 Benefits over the old interface:
  - This can run on a different machine to your server
@@ -21,4 +29,5 @@ What functionality is no longer present:
  
 Notes:
  - If you are going to monetize this (e.g. for donators) please consider the amount of effort that has gone into PlotSquared; currently we get very little in terms of contributions. 
+
  
