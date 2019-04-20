@@ -1,0 +1,187 @@
+@import url("http://fonts.googleapis.com/css?family=Exo:400,700");
+body {
+    font-family: 'Exo', sans-serif;
+}
+
+#nav
+{
+    text-transform: uppercase;
+	background:rgb(70,216,68);
+	color:#fff;
+    font-weight: bold;
+	font-size:15px;
+	position:relative;
+	overflow:hidden;
+}
+
+#item
+{
+	display:inline-block;
+	padding:20px;
+	background:#CCC;
+	border:1px solid #999;
+	margin:20px
+}
+
+#download
+{
+	display:inline-block;
+	padding:20px;
+	background:#6C6;
+	border:1px solid #393;
+	margin:20px
+}
+
+#dlbutton
+{
+	text-decoration:none;
+	height:50px;
+	padding:20px;
+	font-weight:700;
+	color:#fff
+}
+
+#download:hover
+{
+	background:#393
+}
+
+#download:active
+{
+	background:#363
+}
+body
+{
+	padding:10px 20px;
+	background:#FFF;
+}
+
+#button
+{
+	line-height:30px;
+	margin-left:5px;
+	display:inline-block
+}
+
+.navlink
+{
+	text-decoration:none;
+	padding-left:20px;
+	color:inherit;
+}
+
+.navlink:hover
+{
+    text-decoration:underline;
+}
+
+.navlink:active
+{
+	text-decoration: overline;;
+}
+
+#main
+{
+
+}
+
+h1
+{
+	display: none;
+}
+
+table
+{
+	table-layout:auto;
+	width:100%;
+	border-collapse:collapse
+}
+
+td
+{
+	border-bottom:1px solid #CCC;
+	text-align:left;
+	padding:5px
+}
+
+#box
+{
+	padding:10px;
+	border:1px dashed #DDD;
+	margin-bottom:20px;
+	font-weight:700
+}
+
+input[type=text]:focus
+{
+	outline:0 none transparent
+}
+
+input[type=text]
+{
+    font-family: 'Exo', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+	border:1px solid #CCC;
+	font-size:120%;
+	width:100%;
+	cursor:pointer
+}
+
+input[type=text]:hover
+{
+	background-color:#EEE
+}
+
+input[type=submit]:focus
+{
+	outline:0 none transparent
+}
+
+input[type=submit]
+{
+    font-family: 'Exo', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+	border:none;
+	color:#fff;
+	margin-top:25px;
+	font-size:120%;
+    padding: 5px;
+	background:#999;
+	width:100%;
+	cursor:pointer;
+    border-radius: 5px;
+}
+
+input[type=submit]:hover
+{
+	background: rgb(70,216,68)
+}
+
+input[type=submit]:active
+{
+	background-color: #333;
+}
+
+input[type=file]:focus {
+    outline:0px none transparent;
+}
+input[type=file] {
+    font-family: 'Exo', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    margin-top: 25px;
+    width:100%;
+    cursor:pointer;
+}
+input[type=file]:hover {
+    background-color:#EEE;
+}
+input[type=file]:active {
+    background-color:#CCC;
+}

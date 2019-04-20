@@ -1,0 +1,240 @@
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100);
+#dlbutton,#nav,.navlink
+{
+	height: 50px;
+}
+.navbar-brand {
+	background-image: url("http://blockworksmc.com/wp-content/uploads/2016/11/logo21-300x300.jpg");
+	background-size: 40px 40px;
+	background-position: center;
+	padding: 25px 40px 25px 40px;
+	background-repeat: no-repeat;
+	color: transparent;
+	text-shadow: none;
+}
+#banner
+{
+	text-align: center;
+}
+.navlink,.navlink:active,.navlink:hover
+{
+	transition: border 0.4s,background 0.4s;
+}
+b,h2
+{
+	font-weight: 100;
+}
+#download,#item
+{
+	margin: 20px;
+}
+#dlbutton,#download,#item
+{
+	padding: 20px;
+}
+#button,#download,#item
+{
+	display: inline-block;
+}
+#dlbutton,.navlink
+{
+	text-decoration: none;
+}
+#nav
+{
+	background: #0e0d1e;
+	color: #FFF;
+	font-size: 18px;
+	overflow: visible;
+	padding-left: 10%;
+	position: relative;
+	border-bottom: 3px solid #07070f;
+}
+#item
+{
+	background: #CCC;
+}
+#download
+{
+	background: #6C6;
+}
+#dlbutton
+{
+	color: #FFF;
+}
+#download:hover
+{
+	background: #393;
+}
+#download:active
+{
+	background: #363;
+}
+body
+{
+	text-shadow:
+			-1px -1px 0 #222,
+			-1px 1px 0 #222,
+			-1px 0 0 #222,
+			1px -1px 0 #222,
+			1px 1px 0 #222,
+			1px 0 0 #222,
+			0 -1px 0 #222,
+			0 1px 0 #222;
+	background-image: url("http://empcraft.com/fawe/style/congruent_outline.png");
+	background-color: #DDD;
+	color: #EEE;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size: 13px;
+	font-weight: 100;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	top: 0;
+}
+#button
+{
+	line-height: 50px;
+	margin-left: 5px;
+}
+.navlink
+{
+	color: #FFF;
+	padding: 10px;
+	border-radius: 6px;
+}
+h2,td
+{
+	padding: 5px;
+}
+.navlink:hover
+{
+	background: #191928;
+}
+.navlink:active
+{
+	background: #07070f;
+}
+#main
+{
+	background: #191928;
+	padding: 10px 20px;
+	margin: 0 0;
+	border-bottom: 3px solid #07070f;
+}
+h1
+{
+	border-top: 3px solid #14141e;
+	border-bottom: 3px solid #07070f;
+	font-weight: 100;
+	background: #191928;
+	font-size: 30px;
+	margin: -45px 0 0;
+	padding: 10px 20px;
+	text-align: center;
+}
+h2
+{
+	margin: 0 0 10px;
+	font-size: 30px;
+	text-align: left;
+}
+input[type=file],input[type=submit],input[type=text]
+{
+	cursor: pointer;
+	font: 150% 'Alegreya Sans SC', sans-serif;
+	width: 100%;
+}
+table
+{
+	font-size: 150%;
+	border: 1px solid #555;
+	border-top: 1px solid #666;
+	border-bottom: 1px solid #333;
+	border-radius: 6px;
+	table-layout: auto;
+	background: #0e0d1e;
+	width: 100%;
+}
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+td
+{
+	text-align: left;
+}
+#box
+{
+	margin-bottom: 20px;
+}
+input[type=file]:focus,input[type=submit]:focus,input[type=text]:focus
+{
+	outline: transparent 0;
+}
+input[type=text]
+{
+	background-color: #444;
+}
+input[type=submit]
+{
+	background: #444;
+	border: 6px solid #666;
+	color: #EEE;
+}
+input[type=submit]:hover
+{
+	background-color: #3C3;
+}
+input[type=submit]:active
+{
+	background-color: #393;
+}
+input[type=file]
+{
+	border: 1px solid #555;
+	border-top-color: #666;
+	border-bottom-color: #333;
+	border-radius: 6px;
+	background-color: #0e0d1e;
+	transition: background 0.5s, border 0.5s, color 0.5s;
+}
+input[type=file]:active,input[type=file]:hover
+{
+	background-color: #00001e;
+	transition: background 0.5s, border 0.5s, color 0.5s;
+	color: transparent;
+
+}
+input[type=file]:hover:after {
+	color: #FFF;
+	content: "\00a0 < Click to choose a file";
+	transition: background 0.5s, border 0.5s, color 0.5s;
+}
+#banner::before
+{
+	color: #CCC;
+	content: "BlockWorks\A";
+	font-size: 500%;
+	white-space: pre;
+}
+#banner::after
+{
+	color: #CCC;
+	font-size: 120%;
+	content: "< creative Minecraft solutions >";
+
+}
+#banner
+{
+	background-image: url("http://empcraft.com/fawe/style/footer_lodyas.png");
+	background-color: #333;
+	letter-spacing: 6px;
+	color: #fff;
+	display: block;
+	font-weight: 100;
+	height: 160px;
+}

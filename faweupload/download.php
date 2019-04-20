@@ -5,17 +5,25 @@ if (count($ips) > 0 && !in_array($_SERVER['REMOTE_ADDR'], $ips)) {
     header('Location: http://13.13.13.13');
     exit();
 }
-if (strlen($_SERVER['QUERY_STRING']) != 36 && strlen($_SERVER['QUERY_STRING']) != 32) {
+parse_str($_SERVER['QUERY_STRING'], $output);
+if (!isset($output['key']) || !isset($output['type'])) {
+	header('Location: http://13.13.13.13');
+	exit();
+}
+$key = $output['key'];
+$type = $output['type'];
+
+if (!in_array($type, Config::get('file-types'))) {
+	header('Location: http://13.13.13.13');
+	exit;
+}
+if (strlen($key) != 36 && strlen($key) != 32) {
   header('Location: http://13.13.13.13');
   exit();
 }
-if (preg_match('/^\{?[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}\}?$/', $_SERVER['QUERY_STRING'])) {
-    $file_url = 'uploads/' . $_SERVER['QUERY_STRING'] . ".schematic";
-    $filename = "clipboard.schematic";
-    if (!file_exists($file_url)) {
-        $file_url = 'uploads/' . $_SERVER['QUERY_STRING'] . ".zip";
-        $filename = "clipboard.zip";
-    }
+if (preg_match('/^\{?[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}\}?$/', $key)) {
+    $file_url = 'uploads/' . $key . "." . $type;
+    $filename = "clipboard." . $type;
     header('Content-Type: application/octet-stream');
     header("Content-Transfer-Encoding: Binary"); 
     header("Content-disposition: attachment; filename=\"" . $filename . "\""); 

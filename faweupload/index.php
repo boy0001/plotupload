@@ -1,89 +1,137 @@
-<?php
-require "config/configuration.php";
-parse_str($_SERVER['QUERY_STRING'], $arr);
-?>
+<?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+ob_start();require "config/configuration.php";parse_str($_SERVER[ 'QUERY_STRING'],$arr);?>
 <HTML>
-<HEAD>
-<TITLE><?php echo Config::get('title');?></TITLE>
-<link rel='stylesheet' type='text/css' href='style/style_<?php echo Config::get('style');?>.css'>
-<link rel='stylesheet' type='text/css' href='style/font.css' media="none" onload="if(media!='all')media='all'">
-<noscript><link rel="stylesheet" 'style/font.css'></noscript>
-</HEAD>
-<BODY>
 
-<!--
-EDITABLE: Navigation
--->
-<div id=nav>
-<a class="navbar-brand"><?php echo Config::get('navtitle');?></a>
-<div id=button><a class=navlink href="<?php echo Config::get('home');?>">Home</a></div>
-<div id=button><a class=navlink href="https://github.com/boy0001/FastAsyncWorldedit/wiki">Wiki</a></div>
-<div id=button><a class=navlink href="https://github.com/boy0001/FastAsyncWorldedit/issues">Report Issue</a></div>
-<div id=button><a class=navlink href="https://discord.gg/ngZCzbU">Support/Chat</a></div>
-</div>
-<div id=banner>
-</div>
-<!--
-END NAVIGATION
--->
-<?php
+<HEAD>
+  <link rel="icon" href="data:;base64,=">
+  <TITLE><?php echo Config::get( 'title');?></TITLE>
+	<link rel='stylesheet' type='text/css' href='style/style_<?php echo Config::get('style');?>.css'>
+</HEAD>
+
+<BODY>
+  <div id=nav>
+    <a class="navbar-brand">
+      <?php echo Config::get('navtitle');?>
+    </a>
+    <div id=button>
+      <a class=navlink href="<?php echo Config::get('home');?>">Home
+    </a>
+    </div>
+    <div id=button>
+      <a class=navlink href="<?php echo Config::get('wiki');?>">Wiki
+    </a>
+    </div>
+    <div id=button>
+      <a class=navlink href="<?php echo Config::get('issues');?>">Report Issue
+    </a>
+    </div>
+    <div id=button>
+      <a class=navlink href="<?php echo Config::get('support');?>">Support/Chat
+    </a>
+    </div>
+    <div id=button>
+      <a class=navlink href="<?php echo Config::get('privacy');?>">Privacy Policy
+    </a>
+    </div>
+  </div>
+  <div id=banner></div>
+<?php 
 if (isset($arr["key"])) {
-    $uuid = htmlspecialchars($arr["key"]);
-    $type = isset($arr["type"]) ? $arr["type"] : "schematic";
-    if ((strlen($uuid) == 36 || strlen($uuid) == 32) && preg_match('/^\{?[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}\}?$/', $uuid) != 0) {
-        $target_dir = "uploads/";
-        $target_file = $target_dir . basename($uuid) . "." . $type;
-        if (file_exists($target_file)) {
-            echo "<a href='uploads/" . $uuid . "." . $type . "'><h1>Click here if your download doesn't start automatically</h1></a>";
-            if (Config::get('allow-delete')) {
-                echo "<br><br><br><a href='delete.php?" . $uuid . "'><h1>Click here to permanently delete the file</h1></a>";
-            }
-            header( "refresh:0;url=http://" . $_SERVER["SERVER_NAME"] . strtok($_SERVER["REQUEST_URI"],'?') . "download.php?" . $uuid) ;
-        } else {
-            echo "<h1>File deleted!</h1>";
-        }
-    } else {
-        echo "<h1>Invalid Key!</h1>";
+ $uuid = htmlspecialchars($arr["key"]);
+ $type = isset($arr["type"]) ? $arr["type"] : "schematic";
+ if (in_array($type, Config::get('file-types'))) {
+  if ((strlen($uuid) == 36 || strlen($uuid) == 32) && preg_match('/^\{?[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}\}?$/', $uuid) != 0) {
+   $target_dir = "uploads/";
+   $target_file = $target_dir . basename($uuid) . "." . $type;
+   if (file_exists($target_file)) {
+    echo "<a href='uploads/" . $uuid . "." . $type . "'><h1>Click here if your download doesn't start automatically</h1></a>";
+    if (Config::get('allow-delete')) {
+     echo "<br /><br /><br /><a href='delete.php?key=" . $uuid . "&type=" . $type . "'><h1>Click here to permanently delete the file</h1></a>";
     }
+    header("refresh:1;url=http://" . $_SERVER["SERVER_NAME"] . strtok($_SERVER["REQUEST_URI"], '?') . "download.php?key=" . $uuid . "&type=" . $type);
+   }
+   else {
+    echo "<h1>File deleted!</h1>";
+   }
+  }
+  else {
+   echo "<h1>Invalid Key!</h1>";
+  }
+ }
+ else {
+  echo "<h1>Invalid format!</h1>";
+ }
 }
 else {
-    echo "<h1 class='h1-custom'>" . Config::get('header1') . "</h1>";
+ echo "<h1 class='h1-custom'>" . Config::get('header1') . "</h1>";
 }
 ?>
-<div id="main"><div id=box><h2>How to download a schematic</h2><table> <tr> <td><b>Copy an area to your clipboard</b></td><td id=ip>//copy</td></tr><tr> <td><b>Download your clipboard</b></td><td>//download</td></tr></table></div>
-<?php
-if (count(Config::get('required_ips')) == 0) {
-    echo "<h2>Upload:</h2><form id='myform' action='upload.php' method='post' enctype='multipart/form-data'><input type='file' name='schematicFile' onchange='upload()'></form>";
-}
-?>
-</div>
-<script>
-function upload() {
-    var form = document.getElementById("myform");
-    form.action = "upload.php?" + 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {var r = Math.random()*16|0,v=c=='x'?r:r&0x3|0x8;return v.toString(16);});
-    form.submit();
-}
-search = window.location.search.substring(1);
-if (search.length > 0) {
-    split = search.split("&");
-    for (var i in split) {
-        term = split[i];
-        console.log(term);
-        split2 = term.split("=");
-        switch(split2[0]) {
-            case "key":
-                // do stuff
-                break;
-            case "ip":
-                document.getElementById("ip").innerHTML = split2[1];
-                break;
-            case "upload":
-                window.prompt("To load your schematic use ", "//schematic load url:" + split2[1]);
-                window.location = window.location.href.split("?")[0];
-                break;
-        }
+  <div id="main">
+    <div id=box>
+      <h2>How to download a schematic
+    </h2>
+      <table>
+        <tr>
+          <td>
+            <b>Copy an area to your clipboard
+        </b>
+          </td>
+          <td id=ip>//copy
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Download your clipboard
+        </b>
+          </td>
+          <td>//download
+          </td>
+        </tr>
+      </table>
+    </div>
+    <?php if(count(Config::get( 'required_ips'))==0){echo "<br><h2>How to upload:</h2><form id='myform' action='upload.php' method='post' enctype='multipart/form-data'><input type='file' name='schematicFile' onchange='uploadFile()'></form>";}?>
+  </div>
+  <script>
+    function uploadFile() {
+      var b = document.getElementById("myform");
+      b.action = "upload.php?" + "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
+        var f = Math.random() * 16 | 0,
+          a = c == "x" ? f : f & 3 | 8;
+        return a.toString(16)
+      });
+      b.submit()
     }
-}
-</script>
+
+    function query(j) {
+      var h = window.location.search.substring(1);
+      var a = h.split("&");
+      for (var i = 0; i < a.length; i++) {
+        var g = a[i].split("=");
+        if (decodeURIComponent(g[0]) == j) {
+          return decodeURIComponent(g[1])
+        }
+      }
+      return null
+    }
+    search = window.location.search.substring(1);
+    if (search.length > 0) {
+      var upload = query("upload");
+      var type = query("type");
+      var ip = query("ip");
+      if (upload != null) {
+        if (type == null) {
+          type = "schematic"
+        }
+        window.prompt("To load your schematic use ", "//schematic load " + type + " url:" + upload);
+        window.location = window.location.href.split("?")[0]
+      }
+      if (ip != null) {
+        document.getElementById("ip").innerHTML = ip
+      }
+    };
+  </script>
 </BODY>
 </HTML>

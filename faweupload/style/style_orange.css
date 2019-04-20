@@ -1,0 +1,151 @@
+#nav {
+    background: #EE7700;
+    color: white;
+    height: 50px;
+    font-weight: bold;
+    font-size: 13px;
+    padding-left: 10%;
+    position: relative;
+    box-shadow: 0 0 10px #EE7700;
+    overflow:hidden;
+    border-bottom: 2px solid #DD6600;
+}
+#item {
+    display: inline-block;
+    padding: 20px;
+    background: #CCC;
+    border: 1px solid #999;
+    margin: 20px; 
+}
+#download {
+    display: inline-block;
+    padding: 20px;
+    background: #66CC66;
+    border: 1px solid #339933;
+    margin: 20px;
+}
+#dlbutton {
+    text-decoration: none;
+    height: 50px;
+    padding: 20px;
+    font-weight: bold;
+    color: white;
+}
+#download:hover {
+    background: #339933;
+}
+#download:active {
+    background: #336633;
+}
+#banner {
+    height: 0px;
+}
+body {
+    background: #FFF;
+    
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+}
+#button {
+    line-height: 50px;
+    margin-left: 5px;
+    display: inline-block;
+}
+.navlink {
+    text-decoration: none;
+    height: 50px;
+    padding: 20px;
+    color: inherit;
+}
+.navlink:hover {
+    background: #CC6600;
+	color: white;
+}
+.navlink:active {
+    background: #994400;
+	color: white;
+}
+#main {
+    padding: 0 20px 0 20px;
+    margin: 40px 10% 40px 10%;
+    background: #FFF;
+    box-shadow: 0 0 15px #000000;
+    border: 2px solid #DDD;
+}
+h1 {
+    padding: 5px;
+    margin: 40px 10% 40px 10%;
+    background: #EE7700;
+    box-shadow: 0 0 15px #EE7700;
+    color: white;
+    text-align: center;
+    border: 2px solid #DD6600;
+}
+table {
+    table-layout: auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    border-bottom: 1px solid #CCC;
+    text-align: left;
+    padding: 5px;
+}
+#box {
+    background: #EEE;
+    padding: 20px;
+    border: 1px solid #DDD;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+input[type=text]:focus {
+    outline:0px none transparent;
+}
+input[type=text] {
+    border:1px solid #CCC;
+    font-size:150%;
+    width:100%;
+    cursor:pointer;
+}
+input[type=text]:hover {
+    background-color:#EEE;
+}
+input[type=submit]:focus {
+    outline:0px none transparent;
+}
+input[type=submit] {
+    border: 1px solid #994400;
+    color: white;
+    margin-top: 25px;
+    font-size:150%;
+    background:#EE7700;
+    width:100%;
+    cursor:pointer;
+}
+input[type=submit]:hover {
+    background-color:#CC6600;
+}
+input[type=submit]:active {
+    background-color:#994400;
+}
+
+
+input[type=file]:focus {
+    outline:0px none transparent;
+}
+input[type=file] {
+    border: 1px solid #CCC;
+    margin-top: 25px;
+    font-size:150%;
+    width:100%;
+    cursor:pointer;
+}
+input[type=file]:hover {
+    background-color:#EEE;
+}
+input[type=file]:active {
+    background-color:#CCC;
+}

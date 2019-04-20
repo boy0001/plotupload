@@ -1,0 +1,202 @@
+@import url("http://fonts.googleapis.com/css?family=Exo:400,700");
+#nav
+{
+	background:#FFF;
+	color:#fff;
+	height:30px;
+	font-weight:700;
+	font-size:13px;
+    margin: 25px;
+	padding-left:10%;
+	position:relative;
+	box-shadow:0 0 25px #999;
+	overflow:hidden;
+}
+
+#item
+{
+	display:inline-block;
+	padding:20px;
+	background:#CCC;
+	margin:20px;
+    box-shadow: inset 0 0 25px #999;
+}
+
+#download
+{
+	display:inline-block;
+	padding:20px;
+	background:#6C6;
+	margin:20px;
+    box-shadow: inset 0 0 25px #999;
+}
+
+#dlbutton
+{
+	text-decoration:none;
+	height:50px;
+	padding:20px;
+	font-weight:700;
+	color:#fff;
+}
+
+#download:hover
+{
+	background:#393
+}
+
+#download:active
+{
+	background:#363
+}
+
+#banner
+{
+	height:100px;
+    background-image: url('logo.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center 85px;
+}
+
+body
+{
+	background:#F0F0F0;
+	font-family: 'Exo', sans-serif;
+	margin:0;
+	padding:0;
+	top:0;
+	left:0
+}
+
+#button
+{
+	line-height:30px;
+	margin-left:5px;
+	display:inline-block
+}
+
+.navlink
+{
+	text-decoration:none;
+    font-weight: bold;  
+	height:30px;
+	padding:20px;
+	color:#333
+}
+
+.navlink:hover
+{
+	background: #F0F0F0;
+}
+
+.navlink:active
+{
+    background: #DDD;
+    box-shadow: inset 0 0 25px #999;
+}
+
+#main
+{
+	padding:20px;
+	margin:40px 10%;
+	background:#FFF;
+	box-shadow:0 0 25px #999;
+	overflow:hidden;
+}
+h1::before {
+    content: "\""
+}
+h1::after {
+    content: "\""
+}
+h1
+{
+	text-align:center;
+}
+
+table
+{
+	table-layout:auto;
+	width:100%;
+	border-collapse:collapse
+}
+
+td
+{
+	border-bottom:1px solid #CCC;
+	text-align:left;
+	padding:5px
+}
+
+#box
+{
+	background:#F0F0F0;
+	padding:20px;
+	border:1px solid #DDD;
+	margin-bottom:20px;
+	font-weight:700;
+    box-shadow: inset 0 0 25px #999;
+}
+
+input[type=text]:focus
+{
+	outline:0 none transparent
+}
+
+input[type=text]
+{
+    font-family: 'Exo', sans-serif;
+    box-shadow: inset 0 0 10px #999;
+    background-color:#EEE;
+	border:none;
+	font-size:150%;
+	width:100%;
+	cursor:pointer
+}
+
+input[type=submit]:focus
+{
+	outline:0 none transparent
+}
+
+input[type=submit]
+{
+    font-family: 'Exo', sans-serif;
+	border:none;
+	color:#fff;
+	margin-top:25px;
+	font-size:150%;
+	background:#66CC66;
+	width:100%;
+	cursor:pointer;
+    box-shadow: inset 0 0 10px #000;
+}
+
+input[type=submit]:hover
+{
+	background-color:#33CC33
+}
+
+input[type=submit]:active
+{
+	background-color:#339933;
+}
+
+input[type=file]:focus {
+    outline:0px none transparent;
+}
+input[type=file] {
+    font-family: 'Exo', sans-serif;
+    border: 1px solid #CCC;
+    margin-top: 25px;
+    font-size:150%;
+    width:100%;
+    cursor:pointer;
+}
+input[type=file]:hover {
+    background-color:#CCC;
+}
+input[type=file]:active {
+    background-color:#CCC;
+}
